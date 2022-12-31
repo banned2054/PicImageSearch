@@ -12,10 +12,10 @@ class TraceMoeMe:
 
 class TraceMoeItem:
     def __init__(
-        self,
-        data: Dict[str, Any],
-        mute: bool = False,
-        size: Optional[str] = None,
+            self,
+            data: Dict[str, Any],
+            mute: bool = False,
+            size: Optional[str] = None,
     ):
         """
 
@@ -56,10 +56,10 @@ class TraceMoeItem:
 
 class TraceMoeResponse:
     def __init__(
-        self,
-        data: Dict[str, Any],
-        mute: bool,
-        size: Optional[str],
+            self,
+            data: Dict[str, Any],
+            mute: bool,
+            size: Optional[str],
     ):
         self.origin: Dict[str, Any] = data  # 原始数据
         self.raw: List[TraceMoeItem] = []  # 结果返回值

@@ -30,11 +30,11 @@ class Iqdb(HandOver):
         return IqdbResponse(d)
 
     async def search(
-        self,
-        url: Optional[str] = None,
-        file: Union[str, bytes, Path, None] = None,
-        force_gray: bool = False,
-        is_3d: bool = False,
+            self,
+            url: Optional[str] = None,
+            file: Union[str, bytes, Path, None] = None,
+            force_gray: bool = False,
+            is_3d: bool = False,
     ) -> IqdbResponse:
         iqdb_url = "https://3d.iqdb.org/" if is_3d else "https://iqdb.org/"
         data: Dict[str, Any] = {}

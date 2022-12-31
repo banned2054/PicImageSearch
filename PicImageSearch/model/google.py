@@ -11,9 +11,9 @@ class GoogleItem:
         self.thumbnail: str = ""
         thumbnail = data("img")
         if (
-            thumbnail
-            and thumbnail.attr("src")
-            != "data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                thumbnail
+                and thumbnail.attr("src")
+                != "data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
         ):
             self.thumbnail = thumbnail.attr("src")
 

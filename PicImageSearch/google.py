@@ -38,7 +38,7 @@ class Google(HandOver):
         return self._slice(resp_text, index)
 
     async def search(
-        self, url: Optional[str] = None, file: Union[str, bytes, Path, None] = None
+            self, url: Optional[str] = None, file: Union[str, bytes, Path, None] = None
     ) -> GoogleResponse:
         """
         Google

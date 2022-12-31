@@ -15,8 +15,8 @@ class DNSError(Exception):
 
 class ByPassResolver(AbstractResolver):
     def __init__(
-        self,
-        endpoints: Optional[List[str]] = None,
+            self,
+            endpoints: Optional[List[str]] = None,
     ) -> None:
         self.endpoints = endpoints or [
             "https://1.0.0.1/dns-query",
@@ -27,7 +27,7 @@ class ByPassResolver(AbstractResolver):
         ]
 
     async def resolve(
-        self, hostname: str, port: int = 0, family: int = socket.AF_INET
+            self, hostname: str, port: int = 0, family: int = socket.AF_INET
     ) -> List[Dict[str, Any]]:
         tasks = [
             self._resolve(endpoint, hostname, family) for endpoint in self.endpoints
@@ -88,7 +88,7 @@ class ByPassResolver(AbstractResolver):
         return result
 
     async def _resolve(
-        self, endpoint: str, hostname: str, family: int, timeout: int = 5
+            self, endpoint: str, hostname: str, family: int, timeout: int = 5
     ) -> List[str]:
 
         params = {
@@ -100,10 +100,10 @@ class ByPassResolver(AbstractResolver):
 
         async with ClientSession() as session:
             async with session.get(
-                endpoint,
-                params=params,
-                headers={"accept": "application/dns-json"},
-                timeout=ClientTimeout(total=timeout),
+                    endpoint,
+                    params=params,
+                    headers={"accept": "application/dns-json"},
+                    timeout=ClientTimeout(total=timeout),
             ) as resp:
                 if resp.status == 200:
                     return self.parse_result(hostname, json_loads(await resp.text()))

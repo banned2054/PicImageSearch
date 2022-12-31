@@ -8,11 +8,11 @@ from .network import HandOver
 
 class EHentai(HandOver):
     def __init__(
-        self,
-        covers: bool = False,
-        similar: bool = True,
-        exp: bool = False,
-        **request_kwargs: Any
+            self,
+            covers: bool = False,
+            similar: bool = True,
+            exp: bool = False,
+            **request_kwargs: Any
     ):
         super().__init__(**request_kwargs)
         self.covers: bool = covers
@@ -20,10 +20,10 @@ class EHentai(HandOver):
         self.exp: bool = exp
 
     async def search(
-        self,
-        url: Optional[str] = None,
-        file: Union[str, bytes, Path, None] = None,
-        ex: bool = False,
+            self,
+            url: Optional[str] = None,
+            file: Union[str, bytes, Path, None] = None,
+            ex: bool = False,
     ) -> EHentaiResponse:
         _url = (
             "https://exhentai.org/upld/image_lookup.php"

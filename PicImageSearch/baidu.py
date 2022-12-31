@@ -12,7 +12,7 @@ class BaiDu(HandOver):
         super().__init__(**request_kwargs)
 
     async def search(
-        self, url: Optional[str] = None, file: Union[str, bytes, Path, None] = None
+            self, url: Optional[str] = None, file: Union[str, bytes, Path, None] = None
     ) -> BaiDuResponse:
         params = {"from": "pc"}
         data: Optional[Dict[str, Any]] = None
