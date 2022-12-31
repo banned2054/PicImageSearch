@@ -23,7 +23,7 @@ class Ascii2D(HandOver):
         self.bovw: bool = bovw
 
     async def search(
-        self, url: Optional[str] = None, file: Union[str, bytes, Path, None] = None
+            self, url: Optional[str] = None, file: Union[str, bytes, Path, None] = None
     ) -> Ascii2DResponse:
         """
         Ascii2D

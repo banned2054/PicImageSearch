@@ -43,7 +43,7 @@ class TraceMoe(HandOver):
     me_url = "https://api.trace.moe/me"
 
     def __init__(
-        self, mute: bool = False, size: Optional[str] = None, **request_kwargs: Any
+            self, mute: bool = False, size: Optional[str] = None, **request_kwargs: Any
     ):
         """主类
 
@@ -63,9 +63,9 @@ class TraceMoe(HandOver):
 
     @staticmethod
     def set_params(
-        url: Optional[str],
-        anilist_id: Optional[int],
-        cut_borders: bool,
+            url: Optional[str],
+            anilist_id: Optional[int],
+            cut_borders: bool,
     ) -> Dict[str, Union[bool, int, str]]:
         params: Dict[str, Union[bool, int, str]] = {}
         if cut_borders:
@@ -77,7 +77,7 @@ class TraceMoe(HandOver):
         return params
 
     async def update_anime_info(
-        self, item: TraceMoeItem, chinese_title: bool = True
+            self, item: TraceMoeItem, chinese_title: bool = True
     ) -> None:
         variables = {"id": item.anilist}
         url = "https://trace.moe/anilist/"
@@ -106,13 +106,13 @@ class TraceMoe(HandOver):
             item.title_chinese = item.anime_info["title"].get("chinese", "")
 
     async def search(
-        self,
-        url: Optional[str] = None,
-        file: Union[str, bytes, Path, None] = None,
-        key: Optional[str] = None,
-        anilist_id: Optional[int] = None,
-        chinese_title: bool = True,
-        cut_borders: bool = True,
+            self,
+            url: Optional[str] = None,
+            file: Union[str, bytes, Path, None] = None,
+            key: Optional[str] = None,
+            anilist_id: Optional[int] = None,
+            chinese_title: bool = True,
+            cut_borders: bool = True,
     ) -> TraceMoeResponse:
         """识别图片
         :param key: API密钥 https://soruly.github.io/trace.moe-api/#/limits?id=api-search-quota-and-limits

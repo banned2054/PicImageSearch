@@ -31,7 +31,7 @@ def syncify(*types):  # type: ignore
     for t in types:
         for name in dir(t):
             if (
-                not name.startswith("_") or name == "__call__"
+                    not name.startswith("_") or name == "__call__"
             ) and inspect.iscoroutinefunction(getattr(t, name)):
                 _syncify_wrap(t, name)  # type: ignore
 

@@ -10,18 +10,18 @@ from .network import HandOver
 
 class SauceNAO(HandOver):
     def __init__(
-        self,
-        api_key: Optional[str] = None,
-        numres: int = 5,
-        hide: int = 0,
-        minsim: int = 30,
-        output_type: int = 2,
-        testmode: int = 0,
-        dbmask: Optional[int] = None,
-        dbmaski: Optional[int] = None,
-        db: int = 999,
-        dbs: Optional[List[int]] = None,
-        **request_kwargs: Any
+            self,
+            api_key: Optional[str] = None,
+            numres: int = 5,
+            hide: int = 0,
+            minsim: int = 30,
+            output_type: int = 2,
+            testmode: int = 0,
+            dbmask: Optional[int] = None,
+            dbmaski: Optional[int] = None,
+            db: int = 999,
+            dbs: Optional[List[int]] = None,
+            **request_kwargs: Any
     ):
         """
         SauceNAO
@@ -67,7 +67,7 @@ class SauceNAO(HandOver):
                 self.params.add("dbs[]", i)
 
     async def search(
-        self, url: Optional[str] = None, file: Union[str, bytes, Path, None] = None
+            self, url: Optional[str] = None, file: Union[str, bytes, Path, None] = None
     ) -> SauceNAOResponse:
         """
         SauceNAO
